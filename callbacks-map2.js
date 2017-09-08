@@ -1,19 +1,14 @@
-function map(arr, callback) {
-  var newArr = [];
-  for (i = 0; i < arr.length; i++) {
-    newArr.push(
-      callback(arr[i], i, arr)
-    );
+function map(arr, cb) {
+  var newArray = [];
+  for (var i = 0; i < arr.length; i++) {
+    newArray.push(cb(arr[i]));
   }
-  return newArr;
+  return newArray;
 }
-
-
 
 var words = ["ground", "control", "to", "major", "tom"];
 
-
-var wordNum = map(words, function(word) {
+var length = map(words, function(word) {
   return word.length;
 });
 
@@ -26,6 +21,6 @@ var reverse = map(words, function(word) {
 });
 
 
-console.log(wordNum);
+console.log(length);
 console.log(upper);
 console.log(reverse);
